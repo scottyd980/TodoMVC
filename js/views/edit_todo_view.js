@@ -3,6 +3,9 @@ Todos.EditTodoView = Ember.TextField.extend({
 
 	insertNewline: function() {
 		this.get('controller').acceptChanges();
+		
+		// Temp fix for ember-data issue with enter
+		this.$().blur();
 	},
 
 	focusOut: function() {
